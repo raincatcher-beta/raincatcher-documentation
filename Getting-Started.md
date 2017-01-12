@@ -40,7 +40,7 @@ RHMAP provides a set of Raincatcher project templates to help you get the Rainca
     <br><img src="assets/images/select-forms-themes.png" title="Select Forms Themes" alt="Select Forms Themes" height="400px">
 
   2. Click **New Theme**.
-  3. Select the **Base Template**.
+  3. Select the **Red Hat Theme**.
   4. Name the theme, for example **wfm**.
   5. Click **Create**.
 
@@ -68,12 +68,11 @@ RHMAP provides a set of Raincatcher project templates to help you get the Rainca
   5. Click **Next**.
     <br><img src="assets/images/auth-service.png" title="Auth Service" alt="Auth Service" height="400px">
 
-  6. Select the environment for initial deployment.
-  7. Click **Next**.
-  8. Click **Finish**.
-  9. On the **Details** page of the MBaaS service, select **Deploy** from the left-hand side menu.
-  10. Click **Deploy Cloud App**.
-
+  6. Click **Finish**.
+  7. Select the environment for initial deployment.
+  8. On the **Details** page of the MBaaS service, select **Deploy** from the left-hand side menu.
+  9. Click **Deploy Cloud App**.
+ 
 5. Create an auth policy using this new MBaaS service.
   1. Navigate to **Admin -> Auth Policies**.
     <br><img src="assets/images/auth-policy.png" title="Auth Policy" alt="Auth Policy" height="400px">
@@ -132,7 +131,15 @@ RHMAP provides a set of Raincatcher project templates to help you get the Rainca
 
   3. If it does not indicate success, click **Deploy Cloud App** and verify the next deployment is successful.
 
-The apps are now created, configured, and deployed.
+  ** The apps are now created, configured, and deployed. **
+
+10. Check the web app deploment in RHMAP
+  1. Select the **Projects** header menu item.
+  2. Select the **wfm-demo** project.
+  3. Select the web app.
+  4. From the left-hand side menu, select **Details**.
+  5. Click **Current Hoste**.
+  6. Login with user **trever** and password **123**.
 
 ## Running The Raincatcher Apps Locally
 
