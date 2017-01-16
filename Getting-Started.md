@@ -136,7 +136,7 @@ The apps are now created, configured, and deployed.
 
 ## Running The Raincatcher Apps Locally
 
-See the [Running The Demo Raincatcher Solution Locally](Running-locally.md) guide for getting set up locally for Raincatcher development.
+See the [Running The Demo Raincatcher Solution Locally](Running-Locally.md) guide for getting set up locally for Raincatcher development.
 
 ## Integrating A New Module Into The Demo Solution
 
