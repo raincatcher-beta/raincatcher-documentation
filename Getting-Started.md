@@ -138,7 +138,7 @@ RHMAP provides a set of Raincatcher project templates to help you get the Rainca
   2. Select the **wfm-demo** project.
   3. Select the web app.
   4. From the left-hand side menu, select **Details**.
-  5. Click **Current Hoste**.
+  5. Click **Current Host**.
   6. Login with user **trever** and password **123**.
 
 ## Running The Raincatcher Apps Locally
