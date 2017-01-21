@@ -133,7 +133,7 @@ RHMAP provides a set of Raincatcher project templates to help you get the Rainca
 
   ** The apps are now created, configured, and deployed. **
 
-10. Check the web app deploment in RHMAP
+10. Check the web app deployment in RHMAP
   1. Select the **Projects** header menu item.
   2. Select the **wfm-demo** project.
   3. Select the web app.
