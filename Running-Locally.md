@@ -5,12 +5,13 @@
 - [Running The Demo Raincatcher Solution Locally](#running-the-demo-raincatcher-solution-locally)
   - [Overview](#overview)
   - [Requirements](#requirements)
+    - [RHMAP](#rhmap)
     - [MongoDB](#mongodb)
-    - [Ruby (Optional)](#ruby-optional)
-  - [Clone All Of The Raincatcher Modules and Demo Apps](#clone-all-of-the-raincatcher-modules-and-demo-apps)
-  - [Notes On Running Locally](#notes-on-running-locally)
-    - [Using Drag & Drop Apps Locally](#using-drag-&-drop-apps-locally)
-    - [Using A Local Service To Authenticate Users](#using-a-local-service-to-authenticate-users)
+    - [Redis](#redis)
+    - [Ruby](#ruby)
+  - [Install Raincatcher CLI & Clone Repositories](#install-raincatcher-cli--clone-repositories)
+  - [Configure Environment Variables](#configure-environment-variables)
+  - [Run The Applications](#run-the-applications)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
