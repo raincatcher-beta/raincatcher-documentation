@@ -5,7 +5,6 @@
 - [Getting Started with Raincatcher](#getting-started-with-raincatcher)
   - [Overview](#overview)
   - [Raincatcher Structure](#raincatcher-structure)
-    - [Raincatcher Modules](#raincatcher-modules)
   - [Running the Raincatcher Demo Apps In RHMAP](#running-the-raincatcher-demo-apps-in-rhmap)
     - [Create and Configure the Raincatcher Demo Project Using the Project Templates](#create-and-configure-the-raincatcher-demo-project-using-the-project-templates)
   - [Running The Raincatcher Apps Locally](#running-the-raincatcher-apps-locally)
