@@ -13,7 +13,7 @@ use Raincatcher modules and demo apps.
 Getting Started With The Demo Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The link:Getting-Started.adoc[Getting Started With The Demo Solution
+The link:getting-started.adoc[Getting Started With The Demo Solution
 Guide] demonstrates how to use the Red Hat Mobile Application Platform
 (RHMAP) to import the demo solution and get it up and running.
 
@@ -21,7 +21,7 @@ Guide] demonstrates how to use the Red Hat Mobile Application Platform
 Demo Solution Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The link:Demo-Solution-Architecture.adoc[Demo Solution Architecture]
+The link:demo-solution-architecture.adoc[Demo Solution Architecture]
 document describes the architecture of the Demo solution and how it
 integrates with Raincatcher modules.
 
@@ -29,7 +29,7 @@ integrates with Raincatcher modules.
 Running The Demo Solution Locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The link:Running-Locally.adoc[Running The Demo Raincatcher Solution
+The link:running-locally.adoc[Running The Demo Raincatcher Solution
 Locally] guide explains how to get the Raincatcher demo solution running
 on your local development machine. This is targeted at developers that
 wish to extend the existing functionality of Raincatcher modules and
@@ -39,6 +39,6 @@ demo apps.
 Integrating A New Module Into The Demo Solution
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The link:Module-Integration.adoc[Module Integration] guide explains how a
+The link:module-integration.adoc[Module Integration] guide explains how a
 new module can be introduced to the overall solution to provide extra
 functionality.

@@ -142,7 +142,7 @@ the next deployment is successful.
 Running The Raincatcher Apps Locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See the link:Running-Locally.adoc[Running The Demo Raincatcher Solution
+See the link:running-locally.adoc[Running The Demo Raincatcher Solution
 Locally] guide for getting set up locally for Raincatcher development.
 
 [[integrating-a-new-module-into-the-demo-solution]]

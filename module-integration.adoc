@@ -10,7 +10,7 @@ This document presents a guide to how a new Raincatcher module would be
 integrated into the existing Demo Solution to provide extra
 functionality.
 
-It is recommended that you have a link:Running-Locally.adoc[local setup]
+It is recommended that you have a link:running-locally.adoc[local setup]
 of the Raincatcher solution set up before following this guide. This
 will allow for easier editing and feedback.
 
@@ -260,7 +260,7 @@ b. Update the backend cloud router with the new location update endpoint
 
 In the Raincatcher solution, user authentication is provided by the
 `raincatcher-demo-auth` application. (See the
-link:Demo-Solution-Architecture.adoc[architecture guide] for an
+link:demo-solution-architecture.adoc[architecture guide] for an
 illustration of the demo solution.)
 
 Update the `lib/user/user-router.js` file to include a new endpoint for
