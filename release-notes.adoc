@@ -1,22 +1,19 @@
 [[rhmap-3.10.0-release-notes-for-wfm]]
-RHMAP 3.10.0 Release notes for WFM
-----------------------------------
+= RHMAP 3.10.0 Release notes for WFM
 
 [[known-issues]]
-Known issues
-~~~~~~~~~~~~
+== Known issues
+
 
 [[cloud-app]]
-Cloud app
-^^^^^^^^^
+=== Cloud app
 
 * After creating an WFM project from the project template, the appform
 ids in the the `lib/app/workflow.js` folder must be updated with new
 appform ids.
 
 [[portal-client]]
-Portal client
-^^^^^^^^^^^^^
+=== Portal client
 
 * WFM-portal works in Chrome only (Bug #5388)
 * Scheduler
@@ -48,8 +45,7 @@ Portal client
 * 
 
 [[mobile-client]]
-Mobile client
-^^^^^^^^^^^^^
+=== Mobile client
 
 * Offline is currently not supported
 * Calendar

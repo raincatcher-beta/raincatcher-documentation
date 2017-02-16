@@ -1,13 +1,10 @@
 [[the-raincatcher-demo-solution-architecture]]
-The Raincatcher Demo Solution Architecture
-------------------------------------------
+= The Raincatcher Demo Solution Architecture
 
 [[overview]]
-Overview
-~~~~~~~~
+== Overview
 
-This guide presents an introduction to the Demo solution available for
-the Raincatcher project. This solution is intended to demonstrate how
+The Raincatcher demo solution demonstrates how
 the Raincatcher module ecosystem can combine to produce a functional
 Workforce Management solution.
 
@@ -33,17 +30,9 @@ module uses Client and Cloud APIs specific to the RHMAP Sync framework.
 https://github.com/feedhenry-raincatcher/raincatcher-user[raincatcher-user]
 modules uses RHMAP Auth Policies to validate users.
 
-This guide will:
-
-* Present the concept of a Raincatcher module.
-* Present the architecture of the Demo solution, highlighting how the
-Demo solution combines different Raincatcher modules.
-* Illustrate how the functionality of the Demo solution can be expanded
-by adding an additional Raincatcher module.
 
 [[what-is-a-raincatcher-module]]
-What Is A Raincatcher Module?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== What Is A Raincatcher Module?
 
 Before describing the Demo solution, it is necessary to introduce the
 concept of a Raincatcher module.
@@ -78,8 +67,7 @@ become familiar with this simpler solution to get a good understanding
 of Raincatcher concepts before attempting to
 
 [[raincatcher-mediator]]
-Raincatcher Mediator
-^^^^^^^^^^^^^^^^^^^^
+== Raincatcher Mediator
 
 In the Raincatcher project, the
 https://github.com/feedhenry-raincatcher/raincatcher-mediator/blob/master/README.md[Raincatcher
@@ -91,8 +79,7 @@ In the next section, the naming conventions for how Raincatcher modules
 communicate are described.
 
 [[mediator-pattern-namespacing]]
-Mediator Pattern Namespacing
-++++++++++++++++++++++++++++
+=== Mediator Pattern Namespacing
 
 In the Raincatcher project, all modules can subscribe and publish
 messages to the mediator. In order to differentiate between mediator
@@ -111,8 +98,7 @@ successfully. E.g. ``done:wfm:user:list''
 error when executing. E.g. ``error:wfm:user:list''
 
 [[raincatcher-module-user-interface]]
-Raincatcher Module User Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Raincatcher Module User Interface
 
 Raincatcher modules use the https://angularjs.org/[AngularJS 1]
 framework to enable Raincatcher modules to have their own user
@@ -129,8 +115,7 @@ Currently, AngularJS 1 is the only UI framework implemented into the
 Raincatcher modules.
 
 [[bridging-the-mediator-events-between-client-and-cloud]]
-Bridging The Mediator Events Between Client And Cloud
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Bridging The Mediator Events Between Client And Cloud
 
 One of the main concepts in the Raincatcher modules is the bridging of
 mediator events between the Client and Cloud in the same module. By
@@ -173,12 +158,7 @@ module. The _raincatcher-sync_ module provides a mechanism to have
 two-way client-cloud topic propigation.
 
 [[demo-solution-architecture]]
-Demo Solution Architecture
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-[[overview-1]]
-Overview
-^^^^^^^^
+== Demo Solution Architecture
 
 The Demo Raincatcher Solution is based on all of the concepts above. A
 

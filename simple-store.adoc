@@ -1,27 +1,22 @@
-[[use-simple-perstistence-store]]
-Use Simple Perstistence Store
------------------------------
+[[use-simple-persistence-store]]
+= Using a Simple Persistence Store
 
 [[overview]]
-Overview
---------
+== Overview
 
-* This is a new module raincatcher-store-simple that will
-** use current functionality in the mediator ArrayStore
-** use the
+The raincatcher-store-simple module:
+* uses current functionality in the mediator ArrayStore
+* uses the
 https://access.redhat.com/documentation/en/red-hat-mobile-application-platform-hosted/3/paged/cloud-api/chapter-2-fhdb[$fh.db
 Cloud API] to store data in a mongo database
-* Allow users to control whether the memory store or the MongoDB store
+* allow users to control whether the memory store or the MongoDB store
 is used
 
-[[example-use-simple-perstistence-store-for-workorders-in-cloud-app]]
-Example: Use Simple Perstistence Store for workorders in Cloud App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[[example-use-simple-persistence-store-for-workorders-in-cloud-app]]
+== Example: Use Simple Persistence Store for workorders in Cloud App
 
-[[create-list-of-of-workorders-to-be-saved-into-simple-store]]
-Create list of of workorders to be saved into Simple Store
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+. Create list of of workorders to be saved into Simple Store
++
 [source,js]
 ----
 var workorders = [
@@ -31,10 +26,8 @@ var workorders = [
 ];
 ----
 
-[[create-simple-store-in-your-cloud-app]]
-Create Simple Store in your Cloud App
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+. Create a simple store in your Cloud App
++
 [source,js]
 ----
 const SimpleStore = require('fh-wfm-simple-store')({persistent: true});
@@ -44,25 +37,21 @@ simpleStore.init({/* init with data */}).then(function() {
 });
 ----
 
-[[registering-crud-topics-for-the-workorders]]
-Registering CRUD topics for the workorders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We need specify prefix all data topics in the data store(e.g.
+. Register CRUD topics for the workorders
++
+Specify a prefix for all data topics in the data store(e.g.
 `:cloud:data`)
-
++
 [source,js]
 ----
 simpleStore.listen('cloud:data', mediator);
 ----
 
-[[publishing-a-create-topic-to-create-the-workorders]]
-Publishing a create topic to create the workorders
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+. Publish a create topic to create the workorders
++
 Each topic should be picked up by the workorder module which afterwards
 publishes the data store topic
-
++
 [source,js]
 ----
 workorders.forEach(function(workorder) {    
@@ -70,37 +59,39 @@ workorders.forEach(function(workorder) {
 });
 ----
 
-[[option-to-switch-between-memory-store-and-persistence-one]]
-Option to switch between memory store and persistence one
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In case we want to use ArrayStore then we use `WFM_USE_MEMORY_STORE`
-environment variable and set it to `true`
+. Optionally, switch between memory store and persistent store.
++
+.. To use ArrayStore set the `WFM_USE_MEMORY_STORE`
+environment variable to `true`
 image:assets/images/add-simple-store-env-var.png[Add
 `WFM_USE_MEMORY_STORE` Env Var]
-
-Then push environment variables and Cloud App should be restarted.
++
+.. Push environment variables
+.. Restart the Cloud App.
++
 Otherwise
 https://access.redhat.com/documentation/en/red-hat-mobile-application-platform-hosted/3/paged/cloud-api/chapter-2-fhdb[$fh.db
 Cloud API] store will be used for data persistence
 image:assets/images/push-simple-store-env-var.png[Push
 `WFM_USE_MEMORY_STORE` Env Var]
 
-[[removing-data-from-the-data-browser-in-the-deployed-raincatcher-demo-cloud-and-raincatcher-demo-auth-applications]]
-Removing data from the data browser in the deployed
-raincatcher-demo-cloud and raincatcher-demo-auth applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Removing Data Using the Data Browser
 
-If you want to remove data from Data Browser you can open it in side bar
-and see what data from collections should be removed
+If you want to remove data from Data Browser in the deployed
+raincatcher-demo-cloud and raincatcher-demo-auth applications:
+
+. Open the data browser in side bar.
+
+. Determine what data from collections you want to remove:
 image:assets/images/remove-data-from-data-browser.png[Remove data from
-Data Browser]
+Data Browser].
 
-[[resetting-a-persistent-storage-raincatcher-project]]
-Resetting a persistent storage raincatcher project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+. Remove the data.
 
-*Warning: this functionality intended to be used for development and
+=== Resetting a persistent storage raincatcher project
+
+
+*Important: this functionality intended to be used for development and
 demo purposes only and should not be included in a production
 application*
 

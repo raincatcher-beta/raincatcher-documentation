@@ -1,10 +1,8 @@
 [[running-the-demo-raincatcher-solution-locally]]
-Running The Demo Raincatcher Solution Locally
----------------------------------------------
+= Running The Demo Raincatcher Solution Locally
 
 [[overview]]
-Overview
-~~~~~~~~
+== Overview
 
 This guide presents the steps necessary to:
 
@@ -13,12 +11,10 @@ This guide presents the steps necessary to:
 solution.
 
 [[requirements]]
-Requirements
-~~~~~~~~~~~~
+== Requirements
 
 [[rhmap]]
-RHMAP
-~~~~~
+=== RHMAP
 
 The demo solution currently requires an instance of RHMAP and will not work properly without it. It can be a local or remote instance of RHMAP, but must be configured as outlined in the Raincatcher link:getting-started.adoc[Getting Started Guide]. This allows the local *raincatcher-demo-cloud* app to access
 
@@ -28,33 +24,29 @@ The demo solution currently requires an instance of RHMAP and will not work prop
 
 
 [[mongodb]]
-MongoDB
-^^^^^^^
+=== MongoDB
 
 The *raincatcher-demo-cloud* app and *raincatcher-demo-auth* app requires a running MongoDB instance. See the link:https://docs.mongodb.com/manual/installation/[MongoDB Installation Guide] for details on how to install MongoDB.
 
 [[redis]]
-Redis
-^^^^^
+=== Redis
 
 The *raincatcher-demo-cloud* app requires a running instance of Redis. See the link:https://redis.io/topics/quickstart[Redis Quick Start Guide] for details on how to insall Redis manually, or use your system's package manager.
 
+// TODO is this optional
 [[ruby-optional]]
-Ruby
-^^^^
+=== Ruby 
 
 The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and Demo Apps. Follow the steps in the README file to get set up for local development.
 
 In order to use the link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] to manage starting all of the demo apps, you will need to install link:https://www.ruby-lang.org/en/documentation/installation/[Ruby]
 
 [[install-raincatcher-cli-and-clone]]
-Install Raincatcher CLI & Clone Repositories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Install Raincatcher CLI & Clone Repositories
 
 The *raincatcher-appforms* module requires that the containing cloud app has access to a running RHMAP MBaaS. This allows the local *raincatcher-demo-cloud* app to access The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and Demo Apps. Follow the steps in the README to clone, install, and link all of the Raincatcher modules.
 
-Configure Environment Variables
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== Configure Environment Variables
 
 In order to communicate with RHMAP and the local authentication service, several environment variables need to be configured. You can find the values in RHMAP -> Projects -> _Project name given in step 2 of link:getting-started.adoc[Getting Started Guide] -> WFM Demo Cloud App -> Environment Variables -> System Environment Variables.
 
@@ -86,8 +78,9 @@ These environment variables can be placed in the `raincatcher-demo-cloud/Gruntfi
 ----
 
 [[running-the-applications]]
-Run The Applications
-^^^^^^^^^^^^^^^^^^^^
+== Running The Applications
+
+To start the applications:
 
 [source,javascript]
 ----
