@@ -56,34 +56,33 @@ The *raincatcher-appforms* module requires that the containing cloud app has acc
 Configure Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to communicate with RHMAP and the local authentication service, several environment variables need to be configured. You can find the values in RHMAP -> Projects -> _Project name given in step 2 of link:getting-started.adoc[Getting Started Guide] -> WFM Demo Cloud App -> Environment Variables -> System Environment Variables.
+In order to communicate with RHMAP and the local authentication service, several environment variables need to be configured. You can find the values in RHMAP -> Projects -> _Project name given in step 2 of link:getting-started.adoc[Getting Started Guide] -> WFM Demo Cloud App -> Environment Variables -> System Environment Variables. Simply just select all envirnonment variables starting right after FH_AMQP until the end excluding LD_LIBRARY_PATH. Copy this selection into a new file ending with *.env*. Then issue following commands:
 
-These environment variables can be placed in the `raincatcher-demo-cloud/Gruntfile.js` file in the Demo Cloud App.		 +These environment variables should be placed in the `raincatcher-demo-cloud/Gruntfile.js` around line 50 (at the time of writing).
+[source,bash]
+----
+sed 's/\s/=/g' -i <your_file.env>
+sed 's/\\//g' -i <your_file.env>
+----
+
+Then include your properties file into raincatcher-demo-cloud/Gruntfile.js (around line 50):
 
 [source,javascript]
 ----
-{
-  ...
-  env: {
-    local: {
-      FH_APPNAME: "<FH_APPNAME value>",
-      FH_DOMAIN: "<FH_DOMAIN value>",
-      FH_ENV: "<FH_ENV value>",
-      FH_INSTANCE: "<FH_INSTANCE value>",
-      FH_MBAAS_ENV_ACCESS_KEY: "<FH_MBAAS_ENV_ACCESS_KEY value>",
-      FH_MBAAS_HOST: "<FH_MBAAS_HOST value>",
-      FH_MBAAS_PROTOCOL: "<FH_MBAAS_PROTOCOL value>",
-      FH_WIDGET: "<FH_WIDGET value>",
-      FH_APP_API_KEY: "<FH_APP_API_KEY value>",
-
-      // This value can be found in `raincatcher-demo-cloud/Gruntfile.js`
-      // in the FH_SERVICE_MAP environment variable
-      WFM_AUTH_GUID: "iidn3tvprs62asdebat5m3eg"
+    env: {
+      options: {},
+      local: {
+        src: '<your_file.env>',
+        FH_SERVICE_MAP: function(){
+          var serviceMap = {
+            //You can find this value in your_file.env
+            '<WFM_AUTH_GUID>': 'http://localhost:8002'
+          }
+          return JSON.stringify(serviceMap);
+        }
+      }
     }
-  }
-  ...
-}
 ----
+
 
 [[running-the-applications]]
 Run The Applications
