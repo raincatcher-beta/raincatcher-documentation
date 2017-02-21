@@ -1,16 +1,15 @@
 [[module-integration]]
 = Module Integration
 
-[[overview]]
-== Overview
+[[scenario]]
+== Scenario
+
 
 This procedure describes how to integrate a new Raincatcher module into the existing Demo Solution to provide extra functionality.
 
 It is recommended that you have a link:running-locally.adoc[local setup]
 of the Raincatcher solution before following this procedure. 
 
-[[scenario]]
-== Scenario
 
 The existing Raincatcher solution is capable of showing the current
 location of work orders on a map. However, what if an administrator
@@ -31,15 +30,11 @@ This module publishes and subscribes to location based topics.
 There are several changes required to integrate the raincatcher-gps
 module into the Demo Project:
 
-. Update the raincatcher-demo-mobile app to add the new raincatcher-gps
-module.
-. Update the raincatcher-user module to propagate user location updates
-to the Cloud.
-. Update the raincatcher-demo-auth app to handle location update topics.
-. Update the raincatcher-map module to handle displaying user locations
-on the map.
-. Update the raincatcher-demo-portal application to pass users to the
-raincatcher-map scope.
+. <<update-the-raincatcher-demo-mobile-app-to-add-the-new-raincatcher-gps-module,Update the raincatcher-demo-mobile app to add the new raincatcher-gps module>>.
+. <<update-the-raincatcher-user-module-to-propagate-user-location-updates-to-the-cloud,Update the raincatcher-user module to propagate user location updates to the Cloud>>.
+. <<update-the-raincatcher-demo-auth-app-to-handle-location-update-topics,Update the raincatcher-demo-auth app to handle location update topics>>.
+. <<update-the-raincatcher-map-module-to-handle-displaying-user-locations-on-the-map,Update the raincatcher-map module to handle displaying user locations on the map>>.
+. <<update-the-raincatcher-demo-mobile-app-to-add-the-new-raincatcher-gps-module,Update the raincatcher-demo-portal application to pass users to the raincatcher-map scope>>.
 
 [[update-the-raincatcher-demo-mobile-app-to-add-the-new-raincatcher-gps-module]]
 
@@ -59,21 +54,25 @@ module and automatically add it to the dependencies in the
 In the `src/app.js` file, the `fh-wfm-gps` module is included in the
 main angular dependencies.
 +
-[[create-a-new-service-to-publish-and-subscribe-to-location-events]]
-a. Create a new service to publish and subscribe to location events
+[[create-a-service-to-publish-and-subscribe-to-location-events]]
+a. Create a service to publish and subscribe to location events
 +
 The raincatcher-mobile app is responsible for managing the location
 based messages passing between the raincatcher-gps module and
 raincatcher-user module.
 +
+//TODO: very passive below, what is happening?
++
 A new file, `src/app/location/user-location-service.js`, file is added
 to create a service that will be instantiated when the app is loaded.
 +
-This will create the `UserLocationService` that will be instantiated by
+This creates the `UserLocationService` that is instantiated by
 AngularJS.
 +
-This service will periodically publish the `wfm:gps:location:update`
+This service periodically publishes the `wfm:gps:location:update`
 topic that is subscribed to by the `raincatcher-gps` module.
++
+//TODO: passive
 +
 Whenever the `done:wfm:gps:location:update` topic is published, a check
 is made to see if a user is logged in. If this is the case, then the
@@ -95,7 +94,7 @@ angular.module('wfm-mobile.location', ['wfm.core.mediator']).service('UserLocati
 /**
  * This service is responsible for subscribing to location updates from the raincatcher-gps module.
  *
- * These updates are then propigated to the raincatcher-user module to update the users current locaion.
+ * These updates are then propagated to the raincatcher-user module to update the users current location.
  *
  * @param mediator
  * @constructor
@@ -157,14 +156,16 @@ main app config which is defined in the `src/app/config.js` file.
 ----
 +
 [[add-the-new-location-service-as-a-dependency-of-the-wfm-mobile.auth-module]]
-
++
 a. Add the new location service as a dependency of the wfm-mobile.auth
 module
 +
 In the `src/app/auth/auth.js` file, add the `wfm-mobile.location`
-service as a dependency of the `wfm-mobile.auth` module. This is to
-ensure that the `UserLocationService` is instantiated when the
+service as a dependency of the `wfm-mobile.auth` module to
+ensure that the `UserLocationService` service is instantiated when the
 `LoginCtrl` controller is loaded.
++
+//TODO: am i adding one service as a dependency to make sure another service is started above?
 +
 [source,javascript]
 ----
@@ -184,30 +185,26 @@ angular.module('wfm-mobile.auth', [
 ----
 
 [[update-the-raincatcher-user-module-to-propagate-user-location-updates-to-the-cloud]]
-=== 2. Update the raincatcher-user module to propagate user location updates
-to the Cloud
+=== 2. Update the raincatcher-user module to propagate user location updates to the Cloud
 
-In the previous step, we added functionality to the
+In step 1, you added functionality to the
 raincatcher-demo-mobile app to subscribe to an updated location
 published by the `raincatcher-gps` module and publish a
 `wfm:user:location:update` topic with the user ID and updated location.
 
-To assign this updated value to the user and push the updated value to
-the cloud, something has to subscribe to the user position update topic.
+To assign this updated value to the user and push the updated value to the cloud, something has to subscribe to the user position update topic.
 This functionality could be built into the `raincatcher-demo-mobile`,
-`raincatcher-demo-portal` and `raincatcher-demo-auth` applications
-directly without changing any of the modules.
+`raincatcher-demo-portal` and `raincatcher-demo-auth` applications directly without changing any of the modules.
 
 However, updating a user location would be a useful feature to have in
 the raincatcher-user module. It would mean any applications that consume
-the raincatcher-user module could update the user location through
-whichever means they wish. It is not bound in any way to the
+the raincatcher-user module could update the user location without being bound to the
 `raincatcher-gps` module.
 
-The update the raincatcher-user module, the following changes are made:
+The update the raincatcher-user module:
 
 [[update-the-userclient-to-subscribe-to-the-user-location-update-topic.]]
-a. Update the UserClient to subscribe to the user location update topic.
+a. Update the `UserClient` to subscribe to the user location update topic.
 +
 In the `lib/user/user-client.js` file, the constructor for the
 `UserClient` is updated to subscribe to the user location update topic
@@ -303,11 +300,9 @@ Delegate.prototype.updateLocation = function(userId, location) {
 a. Update the MBaaS service endpoint to handle proxied requests from the
 backend cloud app
 +
-In the previous step, we update the backend cloud app to handle requests
-from the `UserClient` in Step 1.
+In the previous step, we update the backend cloud app to handle requests from the `UserClient` in  <<update-the-raincatcher-demo-mobile-app-to-add-the-new-raincatcher-gps-module,Step 1 Update the raincatcher-demo-mobile app to add the new raincatcher-gps module>>.
 +
-We must now update the MBaaS service endpoint to handle the proxied
-request from Step 2.
+We must now update the MBaaS service endpoint to handle the proxied request from Step 2.
 +
 In the `lib/router/mbaas.js` file, add the handler for the location
 update http request.
@@ -332,7 +327,7 @@ mediator.publish('wfm:user:location:update', userId, locationToUpdate);
 [[update-the-raincatcher-demo-auth-app-to-handle-location-update-topics]]
 === 3. Update the raincatcher-demo-auth app to handle location update topics
 
-In the demo solution, the management of saved users is the
+In the demo solution, user management is the
 responsibility of the `raincatcher-demo-auth` app.
 
 The `lib/user.js` module sets up subscribers to the CRUD operations that
@@ -363,11 +358,7 @@ In the steps above, we have completed the full process of capturing user
 locations on the mobile application and propagating them to the cloud
 and MBaaS service for storage.
 
-If storage of user locations was the only motivation for this change,
-then this guide would be complete.
-
-However, the goal of this guide is to also allow portal users to view
-the location of workers on a map.
+This step allows portal users to view the location of workers on a map.
 
 The
 https://github.com/feedhenry-raincatcher/raincatcher-map[raincatcher-map]
@@ -444,16 +435,14 @@ function addUserMarkers(map, workers) {
     });
 }
 ----
-+
+
 [[update-the-raincatcher-demo-portal-application-to-pass-users-to-the-raincatcher-map-scope]]
-+
-a. Update the raincatcher-demo-portal application to pass users to the
-raincatcher-map scope
-+
+=== 5. Update the raincatcher-demo-portal application to pass users to the raincatcher-map scope
+
 Having prepared the `raincatcher-map` module to display user locations,
 use the following steps to update the raincatcher-demo-portal
 application to allow the display of worker locations.
-+
+
 [[update-the-portal-map-module-config-to-resolve-workers]]
 a. Update the portal map module config to resolve workers
 +

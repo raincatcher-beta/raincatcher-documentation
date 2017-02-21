@@ -8,14 +8,13 @@ The raincatcher-store-simple module:
 * uses current functionality in the mediator ArrayStore
 * uses the
 https://access.redhat.com/documentation/en/red-hat-mobile-application-platform-hosted/3/paged/cloud-api/chapter-2-fhdb[$fh.db
-Cloud API] to store data in a mongo database
-* allow users to control whether the memory store or the MongoDB store
-is used
+Cloud API] to store data in a MongoDB database
+* controls which memory store is used, the simple memory store or the MongoDB store
 
 [[example-use-simple-persistence-store-for-workorders-in-cloud-app]]
-== Example: Use Simple Persistence Store for workorders in Cloud App
+== Example: Using Simple Persistence Store for workorders in Cloud App
 
-. Create list of of workorders to be saved into Simple Store
+. Create a list of workorders for demonstrating simple store.
 +
 [source,js]
 ----
@@ -26,7 +25,7 @@ var workorders = [
 ];
 ----
 
-. Create a simple store in your Cloud App
+. Create a simple store for workorders in your Cloud App.
 +
 [source,js]
 ----
@@ -37,10 +36,10 @@ simpleStore.init({/* init with data */}).then(function() {
 });
 ----
 
-. Register CRUD topics for the workorders
+//TODO: where are the RUD topics?
+. Register CRUD topics for the workorders.
 +
-Specify a prefix for all data topics in the data store(e.g.
-`:cloud:data`)
+Specify a prefix for all data topics in the data store, for example `:cloud:data`.
 +
 [source,js]
 ----
@@ -63,39 +62,33 @@ workorders.forEach(function(workorder) {
 +
 .. To use ArrayStore set the `WFM_USE_MEMORY_STORE`
 environment variable to `true`
-image:assets/images/add-simple-store-env-var.png[Add
-`WFM_USE_MEMORY_STORE` Env Var]
 +
 .. Push environment variables
 .. Restart the Cloud App.
 +
-Otherwise
+If you do not perform this procedure, the
 https://access.redhat.com/documentation/en/red-hat-mobile-application-platform-hosted/3/paged/cloud-api/chapter-2-fhdb[$fh.db
-Cloud API] store will be used for data persistence
+Cloud API] store is used for data persistence
 image:assets/images/push-simple-store-env-var.png[Push
 `WFM_USE_MEMORY_STORE` Env Var]
 
 === Removing Data Using the Data Browser
 
 If you want to remove data from Data Browser in the deployed
-raincatcher-demo-cloud and raincatcher-demo-auth applications:
+`raincatcher-demo-cloud` and `raincatcher-demo-auth` applications:
 
 . Open the data browser in side bar.
 
-. Determine what data from collections you want to remove:
-image:assets/images/remove-data-from-data-browser.png[Remove data from
-Data Browser].
+. Select the data you want to remove.
 
-. Remove the data.
+. Click *Delete* to remove the data.
 
-=== Resetting a persistent storage raincatcher project
-
+=== Resetting a Persistent Storage Raincatcher Project
 
 *Important: this functionality intended to be used for development and
 demo purposes only and should not be included in a production
 application*
 
-In case you want all data to be reset to the default state there is an
-option to reset all data inside the Portal App
-image:assets/images/reset-all-data-in-portal-app.png[Reset all data in
-Portal App]
+. Log into the Portal App.
+. Click *Settings* in left-hand menu.
+. Click *RESET ALL DATA*.
