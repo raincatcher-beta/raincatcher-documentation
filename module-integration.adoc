@@ -148,8 +148,7 @@ function UserLocationService(mediator) {
 }
 ----
 +
-Create `config.js` file. The `config.locationPollingInterval` value (in ms) is obtained from the
-main app config which is defined in the `src/app/config.js` file.
+Create `config.js` file at `src/app/config.js`. The `config.locationPollingInterval` value (in ms).
 +
 [source,javascript]
 ----
