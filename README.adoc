@@ -1,6 +1,6 @@
 [[raincatcher-documentation]]
-Raincatcher Documentation
--------------------------
+= Raincatcher Documentation
+
 
 [[overview]]
 == Overview
@@ -19,7 +19,7 @@ Guide] demonstrates how to use the Red Hat Mobile Application Platform
 == Demo Solution Architecture
 
 The link:demo-solution-architecture.adoc[Demo Solution Architecture]
-document describes the architecture of the Demo solution and how it
+document describes the architecture of the demo solution and how it
 integrates with Raincatcher modules.
 
 [[running-the-demo-solution-locally]]

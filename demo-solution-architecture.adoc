@@ -4,10 +4,10 @@
 [[overview]]
 == Overview
 
-The Raincatcher demo solution demonstrates how a combination of 
+The Raincatcher demo solution shows how a combination of 
 Raincatcher modules can be used to produce a workforce management solution.
 
-The Raincatcher Demo solution is intended to be a reference
+The Raincatcher demo solution is intended to be a reference
 implementation of a workforce management solution. This solution
 contains modules that are related specifically to Red Hat Mobile
 Application Platform features, and is therefore currently only
@@ -33,7 +33,7 @@ modules uses RHMAP Auth Policies to validate users.
 [[what-is-a-raincatcher-module]]
 == What Is A Raincatcher Module?
 
-Before describing the Demo solution, it is necessary to introduce the
+Before describing the demo solution, it is necessary to introduce the
 concept of a Raincatcher module.
 
 There are several important concepts that the Raincatcher modules
@@ -146,9 +146,7 @@ two-way client-cloud topic propagation.
 [[demo-solution-architecture]]
 == Demo Solution Architecture
 
-The Demo Raincatcher Solution is based on the concepts above. 
-
-The Demo Raincatcher Solution is comprised of 4 applications:
+The Raincatcher demo solution is based on the concepts above and comprises 4 applications:
 
 * The
 https://github.com/feedhenry-raincatcher/raincatcher-demo-portal[Raincatcher

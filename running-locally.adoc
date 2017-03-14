@@ -14,7 +14,6 @@ The demo solution currently requires an instance of RHMAP. It can be a local or 
 * Drag & Drop App Configuration
 
 
-// TODO are there any version requirements?
 [[mongodb]]
 === MongoDB
 
@@ -25,16 +24,15 @@ The *raincatcher-demo-cloud* app and *raincatcher-demo-auth* app requires a loca
 
 The *raincatcher-demo-cloud* app requires a local running instance of Redis. See the link:https://redis.io/topics/quickstart[Redis Quick Start Guide] for details on how to install Redis, or use your system's package manager.
 
-// TODO is this optional
-[[ruby-optional]]
+[[ruby]]
 === Ruby 
 
-To use the Raincatcher CLI Tool, described later, you need to install link:https://www.ruby-lang.org/en/documentation/installation/[Ruby]
-//TODO any version suit?
+To use the Raincatcher CLI Tool, described later, you need to install link:https://www.ruby-lang.org/en/documentation/installation/[Ruby]. If the CLI tool is not required, you do not need to install Ruby.
+
 
 [[install-raincatcher-cli-and-clone]]
 == Install Raincatcher CLI and Clone Repositories
- The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and Demo Apps. Follow the steps in the README to clone, install, and link all of the Raincatcher modules.
+ The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and demo apps. Follow the steps in the README to clone, install, and link all of the Raincatcher modules.
 
 === Configure Environment Variables
 

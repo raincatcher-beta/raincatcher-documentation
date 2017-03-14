@@ -8,8 +8,6 @@ Raincatcher is a set of templates and a field workforce management (WFM) applica
 Raincatcher consists of a set of reusable modules that can be included in your application using http://browserify.org/[browserify]. 
 
 
-Raincatcher is based on the principle of multiple,
-loosely-coupled modules communicating through the mediator pattern.
 Raincatcher modules make use of the
 https://addyosmani.com/largescalejavascript/[mediator pattern] to enable
 loose coupling between the Raincatcher modules and their consuming
@@ -21,17 +19,17 @@ image:assets/images/wfm-architecture.png[Raincatcher Architecture]
 [[raincatcher-structure]]
 == Raincatcher Structure
 
-Raincatcher modules are packaged and distributed via [npm](https://www.npmjs.com/) and export:
+Raincatcher modules are packaged and distributed using https://www.npmjs.com/[npm] and export as:
 
 * Angular.js directives or services providing client-side functionality for both the mobile and portal clients.
 * Express.js routes providing a REST API to be consumed by the
 client-side portions of the module.
 * FeedHenry sync configurations which enable data synchronization of  module data.
 
-A demonstration is also provided as a project template that shows how the modules can be assembled into an application. See [this guide](the-raincatcher-demo-solution-architecture) for the demo application architecture.
+A demonstration is also provided as a project template that shows how the modules can be assembled into an application. See link:The link:demo-solution-architecture.adoc[Demo Solution Architecture] for more information.
 
 [[running-the-raincatcher-demo-apps-in-rhmap]]
-== Running the Raincatcher Demonstration App
+== Running the Raincatcher Demo Solution
 
 RHMAP provides a Raincatcher project template to help you run the demonstration.
 
@@ -185,8 +183,8 @@ To check the web app deployment in RHMAP:
 .  Login with user *trever* and password **123**.
 
 
-link:running-locally.adoc[Running The Demo Raincatcher Solution
-Locally] describes how to set up your local environment for Raincatcher development.
+link:running-locally.adoc[Running the Raincatcher demo solution
+locally] describes how to set up your local environment for Raincatcher development.
 
 link:Module-Integration.adoc[Module Integration] explains how to introduce a new module to the solution providing extra
 functionality.

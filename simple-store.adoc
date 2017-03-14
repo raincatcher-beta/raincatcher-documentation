@@ -5,10 +5,13 @@
 == Overview
 
 The raincatcher-store-simple module:
+
 * uses current functionality in the mediator ArrayStore
+
 * uses the
 https://access.redhat.com/documentation/en/red-hat-mobile-application-platform-hosted/3/paged/cloud-api/chapter-2-fhdb[$fh.db
 Cloud API] to store data in a MongoDB database
+
 * controls which memory store is used, the simple memory store or the MongoDB store
 
 [[example-use-simple-persistence-store-for-workorders-in-cloud-app]]

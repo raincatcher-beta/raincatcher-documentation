@@ -5,7 +5,7 @@
 == Scenario
 
 
-This procedure describes how to integrate a new Raincatcher module into the existing Demo Solution to provide extra functionality.
+This procedure describes how to integrate a new Raincatcher module into the existing demo solution to provide extra functionality.
 
 It is recommended that you have a link:running-locally.adoc[local setup]
 of the Raincatcher solution before following this procedure. 
@@ -14,7 +14,7 @@ of the Raincatcher solution before following this procedure.
 The existing Raincatcher solution is capable of showing the current
 location of work orders on a map. However, what if an administrator
 would like to see where workers are at any give time? It is not
-currently a feature in the Raincatcher Demo project.
+currently a feature in the Raincatcher demo project.
 
 This procedure introduces this functionality by integrating a new
 raincatcher module:
@@ -28,7 +28,7 @@ This module publishes and subscribes to location based topics.
 
 
 There are several changes required to integrate the raincatcher-gps
-module into the Demo Project:
+module into the demo project:
 
 . <<update-the-raincatcher-demo-mobile-app-to-add-the-new-raincatcher-gps-module,Update the raincatcher-demo-mobile app to add the new raincatcher-gps module>>.
 . <<update-the-raincatcher-user-module-to-propagate-user-location-updates-to-the-cloud,Update the raincatcher-user module to propagate user location updates to the Cloud>>.
@@ -61,8 +61,6 @@ The raincatcher-mobile app is responsible for managing the location
 based messages passing between the raincatcher-gps module and
 raincatcher-user module.
 +
-//TODO: very passive below, what is happening?
-+
 A new file, `src/app/location/user-location-service.js`, file is added
 to create a service that will be instantiated when the app is loaded.
 +
@@ -71,8 +69,6 @@ AngularJS.
 +
 This service periodically publishes the `wfm:gps:location:update`
 topic that is subscribed to by the `raincatcher-gps` module.
-+
-//TODO: passive
 +
 Whenever the `done:wfm:gps:location:update` topic is published, a check
 is made to see if a user is logged in. If this is the case, then the
@@ -164,8 +160,6 @@ In the `src/app/auth/auth.js` file, add the `wfm-mobile.location`
 service as a dependency of the `wfm-mobile.auth` module to
 ensure that the `UserLocationService` service is instantiated when the
 `LoginCtrl` controller is loaded.
-+
-//TODO: am i adding one service as a dependency to make sure another service is started above?
 +
 [source,javascript]
 ----
