@@ -78,7 +78,7 @@ messages to the mediator. In order to differentiate between mediator
 events between topics, it is necessary to namespace the messages that
 are published.
 
-Topics in Raincatcher are defined as text fields separated by a __:__, for example, ``wfm:user:list''. Raincatcher topics are prefixed with _wfm_ by
+Topics in Raincatcher are defined as text fields separated by a __:__, for example, ``wfm:user:list``. Raincatcher topics are prefixed with _wfm_ by
 convention.
 
 Topics can have a state prefix that defines the result of a topic.

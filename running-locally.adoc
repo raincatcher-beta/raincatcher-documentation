@@ -32,11 +32,11 @@ To use the Raincatcher CLI Tool, described later, you need to install link:https
 
 [[install-raincatcher-cli-and-clone]]
 == Install Raincatcher CLI and Clone Repositories
- The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and demo apps. Follow the steps in the README to clone, install, and link all of the Raincatcher modules.
+The link:https://github.com/feedhenry-raincatcher/raincatcher-cli[Raincatcher CLI Tool] is a useful tool for getting set up with all of the Raincatcher modules and demo apps. Follow the steps in the README to clone, install, and link all of the Raincatcher modules.
 
 === Configure Environment Variables
 
-In order to communicate with RHMAP and the local authentication service, several environment variables need to be configured. You can find the values in RHMAP -> Projects -> _Project name given in step 2 of link:getting-started.adoc[Getting Started Guide] -> WFM Demo Cloud App -> Environment Variables -> System Environment Variables.
+In order to communicate with RHMAP and the local authentication service, several environment variables need to be configured. You can find the values in RHMAP -> Projects -> _Project name given in link:getting-started.adoc[Getting Started Guide] -> WFM Demo Cloud App -> Environment Variables -> System Environment Variables.
 
 These environment variables can be placed in the `raincatcher-demo-cloud/Gruntfile.js` file in the Demo Cloud App.		 
 
