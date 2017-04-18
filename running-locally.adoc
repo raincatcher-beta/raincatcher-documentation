@@ -75,7 +75,7 @@ To start the applications:
 wfm start
 ----
 
-*Note*: When running demo-mobile and demo-portal applications in browser please make sure that app parameter is specified.
+*Note*: When running demo-mobile and demo-portal applications in browser please make sure that `url` parameter is specified.
 For example:
 
 ```
