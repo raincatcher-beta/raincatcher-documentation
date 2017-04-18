@@ -74,3 +74,10 @@ To start the applications:
 ----
 wfm start
 ----
+
+*Note*: When running demo-mobile and demo-portal applications in browser please make sure that `url` parameter is specified.
+For example:
+
+```
+http://localhost:9002/?url=http://localhost:8001
+```
