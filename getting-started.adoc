@@ -47,26 +47,6 @@ RHMAP provides a Raincatcher project template to help you run the demonstration.
 
 .. Click *Finish* at the bottom of the page when the project is created. 
 
-. Create a blank forms theme as follows:
-
-..  Navigate to the *Drag & Drop Apps* area and click *Forms Themes*.
-..  Click *New Theme*.
-..  Select the *Red Hat Theme*.
-..  Name the theme, for example `wfm-theme`.
-..  Click *Create*.
-
-. Associate the *Forms theme* with the *WFM Demo Project*:
-
-.. Select the *Projects* header menu item.
-
-.. Open the `wfm-demo` project that you created.
-
-.. Select *Forms* from the project menu.
-
-.. Select the `wfm-theme` theme in the *Project Theme* pulldown.
-
-.. Click *Save*.
-
 . Create an MBaaS Service using the *WFM Auth Service* template:
 
 .. Navigate to the *Services & APIs* area and click *Provision MBaaS Service/API*.

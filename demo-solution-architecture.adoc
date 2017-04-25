@@ -16,10 +16,6 @@ functional with access to an RHMAP platform instance.
 Some examples of RHMAP specific modules include:
 
 * The
-https://github.com/feedhenry-raincatcher/raincatcher-appform[raincatcher-appform]
-module uses APIs specific to the Drag & Drop Apps feature of the RHMAP
-platform.
-* The
 https://github.com/feedhenry-raincatcher/raincatcher-push[raincatcher-push]
 module uses the Aerogear Push API to send push notifications.
 * The
