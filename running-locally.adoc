@@ -7,12 +7,8 @@
 [[rhmap]]
 === RHMAP
 
-The demo solution currently requires an instance of RHMAP. It can be a local or remote instance of RHMAP, but must be configured as outlined in the Raincatcher link:getting-started.adoc[Getting Started Guide] so that the local *raincatcher-demo-cloud* app can access the following RHMAP features:
-
-* Forms
-* Themes
-* Drag & Drop App Configuration
-
+The demo solution currently requires an instance of RHMAP. It can be a local or remote instance of RHMAP, but must be configured as outlined in the Raincatcher
+link:getting-started.adoc[Getting Started Guide] so that the local *raincatcher-demo-cloud* app can access RHMAP's $fh.auth service
 
 [[mongodb]]
 === MongoDB
