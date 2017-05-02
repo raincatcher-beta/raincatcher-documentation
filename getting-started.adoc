@@ -105,6 +105,8 @@ RHMAP provides a Raincatcher project template to help you run the demonstration.
 
 .. Click on the *Upgrade Database* button in the top right corner, and confirm by clicking Upgrade Now. Wait until the upgrade process finishes
 
+.. Deploy *WFM Auth Service* 
+
 . Create an auth policy using this new MBaaS service.
 
 .. Navigate to the *Admin* area and click *Auth Policies*.
