@@ -154,6 +154,16 @@ ID* copied above for the **value**.
 ... Enter `WFM_AUTH_POLICY_ID` for the **name**, and set the auth policy name created earlier as the **value**, for example, `wfm-policy`.
 ... Click **Push Environment Variables**.
 
+. Check that a form theme is selected.
+
+.. Select the *Projects* header menu item.
+
+.. Select the `wfm-demo` project.
+.. Select the `Forms` sub-header tab item.
+.. Click the `Project Theme` dropdown and select the desired theme.
+.. If there is no existing theme, select `-- Create A New Red Hat Theme --`.
+.. Click **Save**.
+
 . Check that the auth service, the cloud app, and the portal
 app are all deployed and started.
 
